@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mina Aydogmus | Data Scientist</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Portfolio de Mina Aydogmus">
+        <meta name="keywords" content="Data Science, Data Analysis, Science des Données">
+        <meta name="author" content="Mina Aydogmus">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="icon" href="Images/accueil.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&display=swap" rel="stylesheet">
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+        </select>
+    </head>
+    <body>
+        
+<!-- MENU -->
+
+	<header>
+		
+		<nav>
+			<ul class="nav__links">
+								<li><a href="about.html"><b>A PROPOS DE</b></a></li>
+				<li><a href="education.html" data-translate="educ"><b>FORMATION</b></a></li>
+				<li><a href="experiences.html"><b>EXPERIENCES</b></a></li>
+				<li><a href="projects.html"><b>PROJETS</b></a></li>
+				<li><a href="index.html"><img class="logo" src="Images/logo.png" alt="logo"></a></li>
+				<li><a href="skills.html"><b>COMPETENCES</b></a></li>
+				<li><a href="Images/CV_Mina_Aydogmus.pdf" download="w3logo" target="_blank"><b>CV</b></a></li>
+				<li><b>LANGUES</b></li>
+				<li><a href="contact.html"><b>ME CONTACTER</b></a></li>
+			</ul>
+		</nav>
+	</header>
+        <section class="home" id="home">
+            <div id="particles-js"></div>
+            <div class="image">
+                <img class="tilt" src="Images/accueil.png" alt="computer">
+            </div>
+            <div class="content">
+                <div class="circle">
+                    <div class="text">
+                        <p id="name" data-translate="nom">Mina Aydogmus</p>
+                    </div>
+                    <div class="text">
+                        <p id="title" data-translate="status">Étudiante en Data Science</p>
+                    </div>
+                </div>
+                <script>
+                    const nameText = document.querySelector('#name');
+                    nameText.innerHTML = nameText.innerText.split('').map(
+                (char, i) =>
+                `<span style="transform:rotate(${-(i-6) * 6}deg)">${char}</span>`
+            ).join('');
+            
+            const titleText = document.querySelector('#title');
+        titleText.innerText = titleText.innerText.charAt(0).toUpperCase() + titleText.innerText.slice(1);
+        titleText.innerHTML = titleText.innerText.split('').map(
+    (char, i) =>
+    `<span style="transform:rotate(${-(i-12) * 2.3}deg)">${char}</span>`
+).join('');
+                </script>
+               <script>
+                // Declare the translator variable once
+                var translator = new Translate();
+                translator.init("data-translate", "en");
+                translator.process();
+            
+                // Define the changeLanguage function
+                function changeLanguage(language) {
+                    translator.init("data-translate", language);
+                    translator.process();
+                }
+            </script>
+            
+            </div>
+            </div>
+        </section>
+
